@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseDAOList implements CourseDAO{
-    private static List<Course> courses = new ArrayList<>();
+    private static final List<Course> courses = new ArrayList<>();
 
     @Override
     public Course saveCourse(Course course) {

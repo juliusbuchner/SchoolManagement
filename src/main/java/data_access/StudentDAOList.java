@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDAOList implements StudentDAO{
-    private static List<Student> students = new ArrayList<>();
+    private static final List<Student> students = new ArrayList<>();
 
     @Override
     public Student saveStudent(Student student) {
