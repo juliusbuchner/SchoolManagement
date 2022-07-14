@@ -1,6 +1,6 @@
-package data_access;
+package se.lexicon.data_access;
 
-import se.lexicon.Student;
+import se.lexicon.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
