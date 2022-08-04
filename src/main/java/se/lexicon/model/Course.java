@@ -2,6 +2,7 @@ package se.lexicon.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 public class Course {
     private int id;
@@ -60,5 +61,28 @@ public class Course {
 
     public void unregister(Student student){
         students.remove(student);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return weekDuration == course.weekDuration && Objects.equals(courseName, course.courseName) && Objects.equals(startDate, course.startDate) && Objects.equals(students, course.students);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(courseName, startDate, weekDuration, students);
+    }
+
+    @Override
+    public String toString() {
+        return "Course:" +
+                "\nid=" + id +
+                "\ncourseName='" + courseName + '\'' +
+                "\nstartDate=" + startDate +
+                "\nweekDuration=" + weekDuration +
+                "\nstudents=" + students;
     }
 }
