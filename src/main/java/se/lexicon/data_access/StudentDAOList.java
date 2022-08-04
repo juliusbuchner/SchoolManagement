@@ -61,4 +61,33 @@ public class StudentDAOList implements StudentDAO{
         }
         return false;
     }
+
+    @Override
+    public void editStudentName(int id, String newName) {
+        for (Student student:students){
+            if (student.getId()==id){
+                student.setName(newName);
+            }
+        }
+
+    }
+
+    @Override
+    public void editStudentEmail(int id, String email) {
+        for (Student student:students){
+            if (student.getId()==id){
+                student.setEmail(email);
+            }
+        }
+
+    }
+
+    @Override
+    public void editStudentAddress(int id, String address) {
+        for (Student student:students){
+            if (student.getId()==id){
+                student.setAddress(address);
+            }
+        }
+    }
 }

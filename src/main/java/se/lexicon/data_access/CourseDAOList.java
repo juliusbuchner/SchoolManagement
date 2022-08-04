@@ -64,4 +64,31 @@ public class CourseDAOList implements CourseDAO {
         }
         return false;
     }
+
+    @Override
+    public void editName(int id, String name) {
+        for (Course course:courses){
+            if (course.getId()==id){
+                course.setCourseName(name);
+            }
+        }
+    }
+
+    @Override
+    public void editDate(int id, LocalDate date) {
+        for (Course course:courses){
+            if (course.getId()==id){
+                course.setStartDate(date);
+            }
+        }
+    }
+
+    @Override
+    public void editDuration(int id, int duration) {
+        for (Course course:courses){
+            if (course.getId()==id){
+                course.setWeekDuration(duration);
+            }
+        }
+    }
 }

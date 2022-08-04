@@ -12,4 +12,7 @@ public interface CourseDAO {
     List<Course> findByDate(LocalDate date);
     List<Course> findAll();
     boolean removeCourse(Course course);
+    void editName(int id, String name);
+    void editDate(int id, LocalDate date);
+    void editDuration(int id, int duration);
 }
