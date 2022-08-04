@@ -1,5 +1,7 @@
 package se.lexicon.model;
 
+import java.util.Objects;
+
 public class Student {
     private int id;
     private String name;
@@ -41,5 +43,25 @@ public class Student {
         this.address = address;
     }
 
-    public void editStudent(Student student){}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(name, student.name) && Objects.equals(email, student.email) && Objects.equals(address, student.address);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, email, address);
+    }
+
+    @Override
+    public String toString() {
+        return "Student:" +
+                "\nid=" + id +
+                "\nname='" + name + '\'' +
+                "\nemail='" + email + '\'' +
+                "\naddress='" + address;
+    }
 }
