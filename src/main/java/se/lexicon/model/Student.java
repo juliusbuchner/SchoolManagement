@@ -7,12 +7,13 @@ public class Student {
     private String name;
     private String email;
     private String address;
+    private static int nId;
 
     public Student(String name, String email, String address) {
         this.name = name;
         this.email = email;
         this.address = address;
-        ++this.id;
+        this.id = ++nId;
     }
 
     public int getId(){
