@@ -1,13 +1,13 @@
-package se.lexicon.active;
+package se.active;
 
-import se.lexicon.data_access.CourseDAOList;
-import se.lexicon.data_access.StudentDAOList;
-import se.lexicon.model.Course;
-import se.lexicon.model.Student;
+import se.data_access.CourseDAOList;
+import se.data_access.StudentDAOList;
+import se.model.Course;
+import se.model.Student;
 
 import java.util.Scanner;
 
-public class CommandLineRunner implements CommandLine{
+public class ConsoleRunner implements Console {
     Scanner scan = new Scanner(System.in);
     StudentDAOList students = new StudentDAOList();
     CourseDAOList courses = new CourseDAOList();
@@ -40,6 +40,14 @@ public class CommandLineRunner implements CommandLine{
     }
 
     private void whatToDoCourse() {
+        System.out.println("Here you can Create new courses or Edit an existing course. You can also get a List of all existing courses.");
+        String course1 = scan.nextLine();
+        if (course1.equalsIgnoreCase("create")){
+
+        }
+    }
+    private void createCourse(){
+
     }
 
     public void whatToDoStudent() {
@@ -135,21 +143,24 @@ public class CommandLineRunner implements CommandLine{
     public void editStudent(){
         System.out.print("Which student do you want to edit? ");
         String sN = scan.nextLine();
-        if (students.findAll().contains(students.findByName(sN))){
+        if (students.findAll().contains(students.findByName(sN).get(0))){
             System.out.print("Do you want to edit the student's Name, Email or Address?");
             String e = scan.nextLine();
             if (e.equalsIgnoreCase("name")){
                 System.out.print("What is the student's new name? ");
                 String n = scan.nextLine();
-                editStudentName(students.findByName(n).get(0).getId(), n);
+                editStudentName(students.findByName(sN).get(0).getId(), n);
+                System.out.println(students.findByName(n).get(0));
             } else if (e.equalsIgnoreCase("email")){
                 System.out.print("What is the student's new email? ");
                 String n = scan.nextLine();
-                editStudentEmail(students.findByName(n).get(0).getId(), n);
+                editStudentEmail(students.findByName(sN).get(0).getId(), n);
+                System.out.println(students.findByName(n).get(0));
             } else if (e.equalsIgnoreCase("address")) {
                 System.out.print("What is the student's new address? ");
                 String n = scan.nextLine();
-                editStudentAddress(students.findByName(n).get(0).getId(), n);
+                editStudentAddress(students.findByName(sN).get(0).getId(), n);
+                System.out.println(students.findByName(n).get(0));
             } else if (e.equalsIgnoreCase("exit") || e.equalsIgnoreCase("quit")) {
                 running = false;
             }
