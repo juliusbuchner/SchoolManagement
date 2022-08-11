@@ -79,7 +79,7 @@ public class Course {
     @Override
     public String toString() {
         return "Course:" +
-                "\nid=" + id +
+                "\ncourse id=" + id +
                 "\ncourseName='" + courseName + '\'' +
                 "\nstartDate=" + startDate +
                 "\nweekDuration=" + weekDuration +
