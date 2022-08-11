@@ -1,9 +1,9 @@
-package se.active;
+package lexicon.active;
 
-import se.data_access.CourseDAOList;
-import se.data_access.StudentDAOList;
-import se.model.Course;
-import se.model.Student;
+import lexicon.data_access.CourseDAOList;
+import lexicon.data_access.StudentDAOList;
+import lexicon.model.Course;
+import lexicon.model.Student;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package se.data_access;
+package lexicon.data_access;
 
-import se.model.Course;
+import lexicon.model.Course;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

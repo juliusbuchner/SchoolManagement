@@ -1,7 +1,7 @@
-package se.active;
+package lexicon.active;
 
-import se.model.Course;
-import se.model.Student;
+import lexicon.model.Course;
+import lexicon.model.Student;
 
 import java.time.LocalDate;
 
